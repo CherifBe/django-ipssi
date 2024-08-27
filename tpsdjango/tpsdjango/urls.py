@@ -29,4 +29,5 @@ urlpatterns = [
     path('bookr/getBooks', bookr.views.getBooks),
     path('api/', include('todo.urls')),
     path('blog/', include('blog.urls')),
+    path('nlp/', include('nlp.urls')),
 ]
