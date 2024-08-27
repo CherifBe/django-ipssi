@@ -3,6 +3,7 @@ from .models import TextAnalysis, TextClassification, TextPreprocessing
  
 class TextAnalysisSerializer(serializers.ModelSerializer):
     author = serializers.StringRelatedField(read_only=True)
+    sentiment = serializers.StringRelatedField(read_only=True)
  
     class Meta:
         model = TextAnalysis
@@ -10,6 +11,7 @@ class TextAnalysisSerializer(serializers.ModelSerializer):
 
 class TextClassificationSerializer(serializers.ModelSerializer):
     author = serializers.StringRelatedField(read_only=True)
+    category = serializers.StringRelatedField(read_only=True)
 
     class Meta:
         model = TextClassification
@@ -17,6 +19,7 @@ class TextClassificationSerializer(serializers.ModelSerializer):
 
 class TextPreprocessingSerializer(serializers.ModelSerializer):
     author = serializers.StringRelatedField(read_only=True)
+    processed_text = serializers.StringRelatedField(read_only=True)
 
     class Meta:
         model = TextPreprocessing

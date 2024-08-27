@@ -20,7 +20,7 @@ class TextClassificationListCreate(generics.ListCreateAPIView):
     permission_classes = [IsAuthenticated]
 
     def perform_create(self, serializer):
-        candidate_labels = ["sports", "politics", "technology"]
+        candidate_labels = ["sports", "politics", "technology", "movie", "music", "art"]
         category = classify_text(self.request.data['text'], candidate_labels)
         serializer.save(author=self.request.user, category=category)
 
